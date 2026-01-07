@@ -1,4 +1,5 @@
 import ResumeButton from "@/components/ResumeButton";
+import Link from "next/link";
 
 export default function HomePage() {
   return (
@@ -18,12 +19,12 @@ export default function HomePage() {
       </p>
 
       <div className="flex gap-4 mt-4">
-        <a
+        <Link
           href="/projects"
           className="px-5 py-2 rounded-md bg-black text-white text-sm"
         >
           View Projects
-        </a>
+        </Link>
 
         <ResumeButton />
       </div>

@@ -10,7 +10,7 @@ type Project = {
 };
 
 async function getProjects(): Promise<Project[]> {
-  const res = await fetch("http://localhost:3000/api/projects", {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL ?? ""}/api/projects`, {
     cache: "no-store",
   });
 
