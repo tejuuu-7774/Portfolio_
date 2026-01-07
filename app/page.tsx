@@ -1,3 +1,5 @@
+import ResumeButton from "@/components/ResumeButton";
+
 export default function HomePage() {
   return (
     <section className="flex flex-col gap-6 max-w-3xl">
@@ -23,12 +25,7 @@ export default function HomePage() {
           View Projects
         </a>
 
-        <a
-          href="/contact"
-          className="px-5 py-2 rounded-md border text-sm"
-        >
-          Contact Me
-        </a>
+        <ResumeButton />
       </div>
     </section>
   );
