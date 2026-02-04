@@ -15,6 +15,6 @@ export const projects = [
       "A habit tracking application focused on consistency and clean UX.",
     techStack: ["React", "Express", "MySQL"],
     githubUrl: "https://github.com/your-username/habitus",
-    liveUrl: "",
+    liveUrl: "https://habitus-app.vercel.app",
   },
 ];
