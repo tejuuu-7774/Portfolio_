@@ -5,7 +5,7 @@ export const projects = [
     description:
       "An AI-powered journaling platform to capture thoughts, moods, and memories.",
     techStack: ["React", "Node.js", "MongoDB"],
-    githubUrl: "https://github.com/your-username/lifelens",
+    githubUrl: "https://github.com/tejuuu-7774/LIFELENS-01.git",
     liveUrl: "https://lifelens-01.vercel.app",
   },
   {
@@ -14,7 +14,7 @@ export const projects = [
     description:
       "A habit tracking application focused on consistency and clean UX.",
     techStack: ["React", "Express", "MySQL"],
-    githubUrl: "https://github.com/your-username/habitus",
-    liveUrl: "https://habitus-app.vercel.app",
+    githubUrl: "https://github.com/tejuuu-7774/HABITUS.git",
+    liveUrl: "https://habitus-six.vercel.app/",
   },
 ];

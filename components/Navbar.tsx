@@ -18,7 +18,7 @@ export default function Navbar() {
             {[
               ["Home", "/"],
               ["About", "/about"],
-              ["Work", "/projects"],
+              ["Projects", "/projects"],
               ["Contact", "/contact"],
             ].map(([label, href]) => (
               <Link

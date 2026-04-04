@@ -32,7 +32,6 @@ export default function ProjectCard({ title, description, techStack, githubUrl, 
       <div className="relative z-10 mt-10 flex items-center justify-between border-t-2 border-[#221A18]/10 pt-6">
         
         {/* Source Code - High Contrast & Interaction */}
-        {/* Source Code - High Contrast & Interaction */}
         <Link 
           href={githubUrl} 
           target="_blank" 
