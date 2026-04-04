@@ -37,13 +37,13 @@ export default function AboutPage() {
       <div className="max-w-6xl mx-auto px-6">
 
         {/* HERO - Increased text sizes and image scale */}
-        <section className="flex flex-col md:flex-row gap-16 items-start mb-32">
+        <section className="flex flex-col md:flex-row gap-16 items-start mb-62">
           {/* Larger Image Container (w-80) */}
           <div className="relative w-56 h-56 md:w-80 md:h-80 flex-shrink-0 group cursor-none">
             <div className="absolute inset-0 border-2 border-[#221A18] rounded-[2.5rem] translate-x-4 translate-y-4 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-500" />
             <div className="relative w-full h-full rounded-[2.5rem] overflow-hidden border-2 border-[#221A18] bg-[#E2D9CF]">
               <Image
-                src="/profile.jpg" 
+                src="/Profile.png" 
                 alt="Tejaswini"
                 fill
                 className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
@@ -66,12 +66,13 @@ export default function AboutPage() {
             </h1>
 
             <p className="text-lg md:text-2xl text-[#4A443F] font-light leading-relaxed max-w-2xl">
-              I’m <strong className="font-bold text-[#221A18]">Tejaswini</strong>. I bridge
-              the gap between complex AI logic and intuitive user interfaces, focusing on
-              calm, high-performance web systems.
+              I’m <strong className="font-bold text-[#221A18]">Tejaswini Palwai</strong>. I learn, build, and find meaning in code,
+                turning thoughts into something real, in my own way.
             </p>
           </div>
         </section>
+
+        <div className="w-full h-[2px] bg-[#221A18]/50 mb-20" />
 
         {/* LEARNING - Larger padding and icons */}
         <section className="mb-40">
@@ -124,59 +125,85 @@ export default function AboutPage() {
               </div>
 
               <div className="pl-8 border-l-2 border-[#221A18]/10 group-hover:border-[#D7A3A1] transition-all duration-500">
-                <div className="flex flex-col sm:flex-row justify-between items-start gap-4 mb-4">
+          
+                <div className="flex flex-col sm:flex-row justify-between items-start gap-4 mb-6">
                   <h4 className="text-3xl md:text-4xl font-bold group-hover:translate-x-1 transition-transform">
                     Frontend Developer Intern
                   </h4>
+
                   <span className="text-xs font-black px-3 py-1.5 bg-[#221A18] text-[#F5EFE7] rounded-lg group-hover:bg-[#D7A3A1] group-hover:text-[#221A18] transition-colors">
                     2025
                   </span>
                 </div>
-                <p className="text-xl italic text-[#4A443F] mb-4">Company Name</p>
-                <p className="text-lg text-[#4A443F] font-light max-w-2xl group-hover:text-[#221A18] transition-colors leading-relaxed">
-                  Worked on production-level React applications with a focus on
-                  performance, UI consistency, and calm user experience.
+
+                <p className="text-lg italic text-[#4A443F] mb-6">
+                  TopSqill Private Limited
                 </p>
+
+                <ul className="space-y-3 text-base md:text-lg text-[#4A443F] font-light max-w-2xl leading-relaxed group-hover:text-[#221A18] transition-colors">
+                  <li>• Built 5+ reusable React components improving UI consistency and development speed</li>
+                  <li>• Contributed to core LMS workflows serving 200+ daily active users</li>
+                  <li>• Tested and validated 20+ REST API endpoints with MySQL-backed data</li>
+                  <li>• Ensured smooth payment flow and reliable backend integration</li>
+                </ul>
+
               </div>
             </div>
 
             {/* EDUCATION */}
             <div className="group">
-              <div className="flex items-center gap-4 mb-8">
+              <div className="flex items-center gap-4 mb-10">
                 <div className="p-3 bg-[#221A18] text-[#F5EFE7] rounded-xl group-hover:-rotate-12 transition-transform duration-300">
                   <GraduationCap size={24} />
                 </div>
-                <h3 className="text-sm font-black uppercase tracking-widest transition-colors group-hover:text-[#D7A3A1]">
+
+                <h3 className="text-sm font-black uppercase tracking-[0.3em] transition-colors group-hover:text-[#D7A3A1]">
                   Academic Background
                 </h3>
               </div>
 
-              <div className="pl-8 border-l-2 border-[#221A18]/10 group-hover:border-[#221A18] transition-all duration-500 space-y-12">
+              <div className="pl-8 border-l-2 border-[#221A18]/10 group-hover:border-[#221A18] transition-all duration-500 space-y-14">
+                
+                {/* COLLEGE */}
                 <div>
                   <h4 className="text-2xl md:text-3xl font-bold group-hover:translate-x-1 transition-transform">
                     B.Tech in Computer Science (AI)
                   </h4>
+
                   <p className="text-xs font-bold text-[#D7A3A1] mt-2 mb-4 tracking-widest">
-                    2022 — 2026
+                    2024 — 2028
                   </p>
-                  <p className="text-lg text-[#4A443F] font-light max-w-2xl group-hover:text-[#221A18] transition-colors leading-relaxed">
-                    Focused on integrating machine learning models into
-                    real-world web applications and optimizing user-centric AI workflows.
+
+                  <p className="text-lg font-medium text-[#221A18] mb-3 tracking-wide">
+                    Rishihood University × Newton School of Technology
+                  </p>
+
+                  <p className="text-lg text-[#4A443F] font-light max-w-2xl leading-relaxed group-hover:text-[#221A18] transition-colors">
+                    Focused on building real-world systems, combining software engineering with AI-driven applications and practical product development.
                   </p>
                 </div>
 
+                {/* SCHOOL */}
                 <div className="opacity-60 group-hover:opacity-100 transition-opacity duration-500">
-                  <h4 className="text-2xl font-bold italic">Secondary & Higher Secondary</h4>
-                  <p className="text-xs font-bold text-[#4A443F] mt-1 mb-4 uppercase tracking-widest">
-                    Studied at [Your School]
+                  <h4 className="text-2xl font-bold italic">
+                    Secondary Education
+                  </h4>
+
+                  <p className="text-xs font-bold text-[#D7A3A1] mt-2 mb-4 tracking-widest">
+                    — 2024
                   </p>
+
+                  <p className="text-lg font-medium text-[#221A18] mb-3 tracking-wide">
+                    Rockwoods International School
+                  </p>
+
                   <p className="text-base text-[#4A443F] font-light italic leading-relaxed">
-                    Focus on Science and Mathematics, laying the groundwork for CS logic and algorithmic thinking.
+                    Built a strong foundation in Science and Mathematics, shaping analytical thinking and problem-solving ability.
                   </p>
                 </div>
+
               </div>
             </div>
-
           </div>
         </section>
       </div>

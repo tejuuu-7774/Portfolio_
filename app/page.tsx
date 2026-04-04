@@ -3,6 +3,30 @@ import ProjectCard from "@/components/ProjectCard";
 import { projects } from "@/lib/projects";
 // Note: Ensure you have lucide-react installed: npm install lucide-react
 import { Github, Linkedin, ArrowUpRight } from "lucide-react";
+import { Layout, Server, Database, Wrench } from "lucide-react";
+
+const skills = [
+  {
+    title: "Frontend",
+    list: "React / Next.js / TypeScript / JavaScript / Tailwind CSS / HTML / CSS",
+    Icon: Layout,
+  },
+  {
+    title: "Backend",
+    list: "Node.js / Express.js",
+    Icon: Server,
+  },
+  {
+    title: "Database",
+    list: "MySQL / MongoDB / PostgreSQL / Prisma",
+    Icon: Database,
+  },
+  {
+    title: "Programming & Tools",
+    list: "Python / NumPy / Pandas / GitHub / Figma / Spreadsheets",
+    Icon: Wrench,
+  },
+];
 
 export default function HomePage() {
   const featuredProjects = projects.slice(0, 4);
@@ -103,7 +127,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* SKILLS SECTION - Optimized */}
+        {/* SKILLS SECTION */}
         <section className="pb-32">
           <div className="relative rounded-[3.5rem] bg-[#221A18] p-10 md:p-24 overflow-hidden shadow-2xl">
             <div className="absolute -top-20 -right-20 w-96 h-96 bg-[#D7A3A1] rounded-full blur-[120px] opacity-10" />
@@ -113,22 +137,29 @@ export default function HomePage() {
                 <h2 className="text-5xl md:text-6xl font-serif italic text-[#F5EFE7]">Expertise</h2>
                 <div className="h-1 w-20 bg-[#D7A3A1]" />
                 <p className="text-lg text-[#A3928E] leading-relaxed max-w-xs font-medium">
-                  Focused on high-performance web systems and refined user experience.
+                  Focused on building reliable, scalable, and user-centric web applications.
                 </p>
               </div>
 
               <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-12">
-                {[
-                  ["Frontend", "React / Next.js / TypeScript / Tailwind"],
-                  ["Design", "Figma / Motion / UX Systems"],
-                  ["Backend", "Node / Express / PostgreSQL"],
-                  ["Tools", "Git / Vercel / Docker"]
-                ].map(([title, list]) => (
-                  <div key={title} className="group relative pt-6 border-t border-[#F5EFE7]/10">
-                    <h3 className="text-[#D7A3A1] text-xs uppercase tracking-[0.4em] font-black mb-4 group-hover:translate-x-2 transition-transform duration-300">
-                      {title}
-                    </h3>
-                    <p className="text-2xl font-light text-[#F5EFE7] group-hover:text-[#D7A3A1] transition-colors duration-300">
+                {skills.map(({ title, list, Icon }) => (
+                  <div
+                    key={title}
+                    className="group relative pt-6 border-t border-[#F5EFE7]/10"
+                  >
+                    {/* ICON + TITLE */}
+                    <div className="flex items-center gap-3 mb-4">
+                      <Icon
+                        size={18}
+                        className="text-[#D7A3A1] group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300"
+                      />
+                      <h3 className="text-[#D7A3A1] text-xs uppercase tracking-[0.4em] font-black group-hover:translate-x-1 transition-transform duration-300">
+                        {title}
+                      </h3>
+                    </div>
+
+                    {/* CONTENT */}
+                    <p className="text-xl font-light text-[#F5EFE7] group-hover:text-[#D7A3A1] transition-colors duration-300">
                       {list}
                     </p>
                   </div>
