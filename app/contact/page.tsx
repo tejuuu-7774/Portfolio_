@@ -73,14 +73,6 @@ export default function ContactPage() {
 
         </div>
       </div>
-
-      {/* FOOTER */}
-      <div className="w-full max-w-6xl mx-auto px-6 pb-10 flex justify-between items-center text-[10px] uppercase tracking-[0.4em] text-[#221A18]/30">
-        <p>© 2026 TEJASWINI</p>
-        <div className="h-[1px] w-12 bg-[#221A18]/10 hidden md:block" />
-        <p className="hidden md:block">BASED IN INDIA</p>
-      </div>
-
     </main>
   );
 }
