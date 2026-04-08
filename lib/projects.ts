@@ -7,6 +7,7 @@ export const projects = [
     techStack: ["React", "Node.js", "MongoDB"],
     githubUrl: "https://github.com/tejuuu-7774/LIFELENS-01.git",
     liveUrl: "https://lifelens-01.vercel.app",
+    imageUrl: "/projects/Lifelens.png"
   },
   {
     id: 2,
@@ -16,5 +17,6 @@ export const projects = [
     techStack: ["React", "Express", "MySQL"],
     githubUrl: "https://github.com/tejuuu-7774/HABITUS.git",
     liveUrl: "https://habitus-six.vercel.app/",
+    imageUrl: "/projects/Habitus.jpg"
   },
 ];

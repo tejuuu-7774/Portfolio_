@@ -19,7 +19,6 @@ export default function Navbar() {
               ["Home", "/"],
               ["About", "/about"],
               ["Projects", "/projects"],
-              ["Contact", "/contact"],
             ].map(([label, href]) => (
               <Link
                 key={label}
