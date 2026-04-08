@@ -1,7 +1,6 @@
 import Link from "next/link";
 import ProjectCard from "@/components/ProjectCard";
 import { projects } from "@/lib/projects";
-// Note: Ensure you have lucide-react installed: npm install lucide-react
 import { Github, Linkedin, ArrowUpRight } from "lucide-react";
 import { Layout, Server, Database, Wrench } from "lucide-react";
 
@@ -29,8 +28,6 @@ const skills = [
 ];
 
 export default function HomePage() {
-  const featuredProjects = projects.slice(0, 4);
-
   return (
     <main className="relative min-h-screen bg-[#F5EFE7] text-[#221A18] selection:bg-[#221A18] selection:text-[#D7A3A1] overflow-x-hidden">
       
@@ -39,7 +36,7 @@ export default function HomePage() {
 
       <div className="max-w-6xl mx-auto px-6">
 
-        {/* 1. HERO SECTION - Full Screen Initial View */}
+        {/* 1. HERO SECTION */}
         <section className="relative min-h-[80vh] flex flex-col justify-center py-20">
           <div className="flex flex-col gap-10 relative z-10">
             <div className="flex items-center justify-between">
@@ -50,17 +47,13 @@ export default function HomePage() {
                 </span>
               </div>
               
-              {/* 3. SOCIAL ICONS */}
               <div className="flex gap-5 text-[#221A18]">
-                <a href="https://github.com/tejuuu-7774" target="_blank" className="hover:text-[#D7A3A1] transition-colors">
+                <a href="https://github.com/tejuuu-7774" target="_blank" rel="noopener noreferrer" className="hover:text-[#D7A3A1] transition-colors">
                   <Github size={20} strokeWidth={1.5} />
                 </a>
-                <a href="https://www.linkedin.com/in/tejaswini-palwai-9a1549268/" target="_blank" className="hover:text-[#D7A3A1] transition-colors">
+                <a href="https://www.linkedin.com/in/tejaswini-palwai-9a1549268/" target="_blank" rel="noopener noreferrer" className="hover:text-[#D7A3A1] transition-colors">
                   <Linkedin size={20} strokeWidth={1.5} />
                 </a>
-                {/* <a href="https://twitter.com" target="_blank" className="hover:text-[#D7A3A1] transition-colors">
-                  <Twitter size={20} strokeWidth={1.5} />
-                </a> */}
               </div>
             </div>
 
@@ -87,7 +80,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* 2. PROJECTS - Named "MY WORK" */}
+        {/* 2. PROJECTS - "MY WORK" */}
         <section id="work" className="pt-20 pb-32">
           <div className="flex items-end justify-between mb-16 border-b-2 border-[#221A18] pb-6">
             <h2 className="text-5xl md:text-7xl font-serif italic text-[#221A18]">
@@ -98,36 +91,48 @@ export default function HomePage() {
             </span>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20">
-            {featuredProjects.map((project) => (
-              <article key={project.id} className="group relative">
-
-                {/* CARD */}
-                <div className="relative aspect-[4/3] rounded-[2rem] overflow-hidden bg-[#E2D9CF] border-2 border-[#221A18]/10 transition-all duration-700 group-hover:border-[#221A18]/30 group-hover:shadow-2xl group-hover:-translate-y-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 justify-items-center">
+            {projects.slice(0, 2).map((project) => (
+              <article key={project.id} className="group relative w-full max-w-[500px]">
+                
+                {/* Main Card Container */}
+                <div className="relative rounded-[2rem] overflow-hidden bg-[#E2D9CF] border-2 border-[#221A18]/10 transition-all duration-700 ease-[0.23,1,0.32,1] group-hover:border-[#221A18]/30 group-hover:shadow-2xl group-hover:-translate-y-2">
                   
-                  {/* PROJECT CONTENT */}
-                  <div className="absolute inset-0 p-4">
+                  {/* INVISIBLE LINK: This covers the whole card without nesting tags */}
+                  <Link 
+                    href="/projects" 
+                    className="absolute inset-0 z-20" 
+                    aria-label={`View ${project.title}`}
+                  />
+
+                  {/* PROJECT CARD: Contains its own internal links (ensure they have z-30) */}
+                  <div className="relative p-4 z-10">
                     <ProjectCard {...project} />
                   </div>
 
-                  {/* TOP RIGHT ARROW */}
-                  <Link
-                    href="/projects"
-                    className="absolute top-6 right-8 h-12 w-12 rounded-full bg-[#221A18] text-[#F5EFE7] flex items-center justify-center opacity-0 group-hover:opacity-100 scale-90 group-hover:scale-100 transition-all duration-500 shadow-lg hover:bg-[#D7A3A1]"
-                  >
-                    <ArrowUpRight size={20} />
-                  </Link>
+                  {/* TOP RIGHT ARROW - Navigates to /projects */}
+                  <div className="absolute top-6 right-6 z-30 h-12 w-12 rounded-full bg-[#221A18] text-[#F5EFE7] flex items-center justify-center 
+                                  translate-x-4 -translate-y-4 opacity-0 scale-75
+                                  group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100 group-hover:scale-100 
+                                  transition-all duration-500 ease-out shadow-lg pointer-events-none">
+                    <ArrowUpRight size={22} className="group-hover:rotate-12 transition-transform duration-300" />
+                  </div>
 
                   {/* HOVER OVERLAY */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#221A18]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#221A18]/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 pointer-events-none" />
                 </div>
 
+                {/* SUB-TEXT LABEL */}
+                <div className="mt-6 px-2 flex justify-between items-center">
+                  <h3 className="text-sm font-black text-[#221A18] uppercase tracking-widest">{project.title}</h3>
+                  <span className="text-xs italic font-serif text-[#221A18]/50">View Project</span>
+                </div>
               </article>
             ))}
           </div>
         </section>
 
-        {/* SKILLS SECTION */}
+        {/* 3. SKILLS SECTION */}
         <section className="pb-32">
           <div className="relative rounded-[3.5rem] bg-[#221A18] p-10 md:p-24 overflow-hidden shadow-2xl">
             <div className="absolute -top-20 -right-20 w-96 h-96 bg-[#D7A3A1] rounded-full blur-[120px] opacity-10" />
@@ -143,11 +148,7 @@ export default function HomePage() {
 
               <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-12">
                 {skills.map(({ title, list, Icon }) => (
-                  <div
-                    key={title}
-                    className="group relative pt-6 border-t border-[#F5EFE7]/10"
-                  >
-                    {/* ICON + TITLE */}
+                  <div key={title} className="group relative pt-6 border-t border-[#F5EFE7]/10">
                     <div className="flex items-center gap-3 mb-4">
                       <Icon
                         size={18}
@@ -157,8 +158,6 @@ export default function HomePage() {
                         {title}
                       </h3>
                     </div>
-
-                    {/* CONTENT */}
                     <p className="text-xl font-light text-[#F5EFE7] group-hover:text-[#D7A3A1] transition-colors duration-300">
                       {list}
                     </p>
@@ -168,7 +167,6 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-
       </div>
     </main>
   );
