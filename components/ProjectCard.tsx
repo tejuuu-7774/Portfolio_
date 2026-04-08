@@ -19,19 +19,20 @@ export default function ProjectCard({
   imageUrl,
 }: ProjectCardProps) {
   return (
-    <div className="group relative h-full w-full max-w-[480px] rounded-[1.5rem] bg-[#F5EFE7] p-5 flex flex-col justify-between transition-all duration-500 border border-[#D7A3A1]/20 hover:shadow-[0_15px_30px_-10px_rgba(215,163,161,0.25)]">
+    /* 1. Added a slightly stronger border and an inset ring for that 'impactful' boundary */
+    <div className="group relative h-full w-full max-w-[480px] rounded-[1.5rem] bg-[#F5EFE7] p-5 flex flex-col justify-between transition-all duration-500 
+                    border border-[#221A18]/10 ring-1 ring-[#221A18]/5
+                    hover:border-[#D7A3A1]/40 hover:shadow-[0_20px_40px_-15px_rgba(34,26,24,0.1)]">
 
       <div className="relative z-10">
 
-        {/* IMAGE - HOVER EFFECT IS NOW LOCALIZED HERE */}
-
+        {/* IMAGE */}
         <div className="relative w-full h-40 mb-5 overflow-hidden rounded-lg bg-[#221A18]/5 border border-[#221A18]/5 transition-all duration-500 hover:scale-[1.02] hover:-translate-y-1 hover:shadow-md cursor-pointer">
           {imageUrl ? (
             <Image
               src={imageUrl}
               alt={title}
               fill
-              /* ADDED 'object-top' BELOW */
               className="object-cover object-top transition-transform duration-700 ease-in-out hover:scale-110"
             />
           ) : (
@@ -41,7 +42,7 @@ export default function ProjectCard({
           )}
         </div>
 
-        {/* TITLE - Keeps existing group hover logic */}
+        {/* TITLE */}
         <div className="mb-3">
           <h4 className="text-lg font-serif italic tracking-tight text-[#221A18] leading-none">
             {title}
@@ -70,14 +71,16 @@ export default function ProjectCard({
       {/* FOOTER */}
       <div className="relative z-10 mt-6 flex items-center justify-between border-t border-[#221A18]/10 pt-3">
 
+        {/* 2. Increased size to text-[11px] and added z-30 */}
         <Link
           href={githubUrl}
           target="_blank"
-          className="group/link flex items-center gap-1 text-[9px] uppercase tracking-[0.2em] font-black text-[#221A18]"
+          rel="noopener noreferrer"
+          className="relative z-30 group/link flex items-center gap-1 text-[11px] uppercase tracking-[0.2em] font-black text-[#221A18]"
         >
           <span className="relative pb-0.5">
             Code
-            <span className="absolute bottom-0 left-0 w-full h-[1.5px] bg-[#221A18] group-hover/link:bg-[#D7A3A1]" />
+            <span className="absolute bottom-0 left-0 w-full h-[1.5px] bg-[#221A18] group-hover/link:bg-[#D7A3A1] transition-colors" />
           </span>
           <span className="group-hover/link:translate-x-1 transition-transform">
             →
@@ -88,7 +91,9 @@ export default function ProjectCard({
           <Link
             href={liveUrl}
             target="_blank"
-            className="flex items-center gap-1.5 py-1.5 px-3 rounded-full bg-[#221A18] text-[#F5EFE7] hover:bg-[#D7A3A1] transition-all text-[9px] uppercase tracking-[0.2em] font-black"
+            rel="noopener noreferrer"
+            /* Increased size to text-[11px] and added z-30 */
+            className="relative z-30 flex items-center gap-1.5 py-1.5 px-4 rounded-full bg-[#221A18] text-[#F5EFE7] hover:bg-[#D7A3A1] transition-all text-[11px] uppercase tracking-[0.2em] font-black shadow-sm"
           >
             Live
           </Link>
