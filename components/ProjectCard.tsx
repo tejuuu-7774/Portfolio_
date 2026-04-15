@@ -9,10 +9,10 @@ type ProjectCardProps = {
   title: string;
   description: string;
   techStack: ProjectStackItem[];
-  githubUrl: string;
+  githubUrl?: string;
   liveUrl?: string;
   imageUrl?: string;
-  status?: string;
+  status?: string[];
   interactivePreview?: boolean;
 };
 
@@ -69,13 +69,28 @@ export default function ProjectCard({
 
       <div className="relative z-10">
         <div className="relative mb-5 h-40 w-full cursor-pointer overflow-hidden rounded-lg border border-[#221A18]/5 bg-[#221A18]/5 transition-all duration-500 hover:scale-[1.02] hover:-translate-y-1 hover:shadow-md">
-          {status && (
+          {status?.length ? (
             <div className="absolute right-3 top-3 z-20">
-              <span className="inline-flex items-center rounded-full border border-[#F5EFE7]/60 bg-[#221A18]/78 px-3 py-1.5 text-[10px] font-black uppercase tracking-[0.28em] text-[#FFF4EC] shadow-[0_10px_25px_-12px_rgba(34,26,24,0.8)] backdrop-blur-md">
-                {status}
+              <div className="flex flex-wrap justify-end gap-2">
+                {status.map((tag) => (
+                  <span
+                    key={tag}
+                    className="inline-flex items-center rounded-full border border-[#F5EFE7]/60 bg-[#221A18]/78 px-3 py-1.5 text-[10px] font-black uppercase tracking-[0.28em] text-[#FFF4EC] shadow-[0_10px_25px_-12px_rgba(34,26,24,0.8)] backdrop-blur-md"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ) : null}
+          {interactivePreview && !expanded ? (
+            <div className="absolute bottom-3 left-3 z-20">
+              <span className="inline-flex items-center gap-2 rounded-full border border-[#F5EFE7]/60 bg-[#F5EFE7]/78 px-3 py-1.5 text-[10px] font-black uppercase tracking-[0.24em] text-[#221A18] shadow-[0_10px_25px_-14px_rgba(34,26,24,0.45)] backdrop-blur-md">
+                <span className="h-1.5 w-1.5 rounded-full bg-[#D7A3A1]" />
+                Click to Expand
               </span>
             </div>
-          )}
+          ) : null}
           {imageUrl ? (
             <Image
               src={imageUrl}
@@ -130,19 +145,25 @@ export default function ProjectCard({
       </div>
 
       <div className="relative z-10 mt-6 flex items-center justify-between border-t border-[#221A18]/10 pt-3">
-        <Link
-          href={githubUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={(event) => event.stopPropagation()}
-          className="relative z-30 flex items-center gap-1 text-[11px] font-black uppercase tracking-[0.2em] text-[#221A18]"
-        >
-          <span className="relative pb-0.5">
-            Code
-            <span className="absolute bottom-0 left-0 h-[1.5px] w-full bg-[#221A18] transition-colors group-hover:bg-[#D7A3A1]" />
+        {githubUrl ? (
+          <Link
+            href={githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={(event) => event.stopPropagation()}
+            className="relative z-30 flex items-center gap-1 text-[11px] font-black uppercase tracking-[0.2em] text-[#221A18]"
+          >
+            <span className="relative pb-0.5">
+              Code
+              <span className="absolute bottom-0 left-0 h-[1.5px] w-full bg-[#221A18] transition-colors group-hover:bg-[#D7A3A1]" />
+            </span>
+            <span className="transition-transform group-hover:translate-x-1">→</span>
+          </Link>
+        ) : (
+          <span className="text-[10px] font-black uppercase tracking-[0.22em] text-[#7C6E6A]">
+            Team Project
           </span>
-          <span className="transition-transform group-hover:translate-x-1">→</span>
-        </Link>
+        )}
 
         {liveUrl && (
           <Link
