@@ -16,7 +16,24 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    id: 1,
+      id: 1,
+      title: "RakshaGrid",
+      description:
+        "Real-time emergency response system that processes raw incident reports, performs AI-based triage and deduplication, and dispatches optimal resources with live system visibility.",
+      techStack: [
+        { label: "Frontend", value: "Next.js + Tailwind CSS" },
+        { label: "Backend", value: "Node.js + Express" },
+        { label: "Database", value: "MongoDB + Mongoose" },
+        { label: "Realtime", value: "WebSockets (Socket.IO)" },
+        { label: "AI", value: "Gemini + Groq APIs" },
+        { label: "Deploy", value: "Render + Vercel" },
+      ],
+      githubUrl: "YOUR_GITHUB_LINK",
+      liveUrl: "https://rakshagrid.onrender.com",
+      imageUrl: "/projects/rakshagrid.png",
+      status: ["Personal Project"],
+    },
+    {id: 2,
     title: "LifeLens",
     description:
       "AI journaling system that captures thoughts, detects emotions, and helps users rediscover meaningful memories through intelligent retrieval.",
@@ -34,7 +51,7 @@ export const projects: Project[] = [
     status: ["Personal Project"],
   },
   {
-    id: 2,
+    id: 3,
     title: "Habitus",
     description:
       "Habit tracking system with streak logic, filtering, and daily tracking designed to improve consistency through clean and focused user experience.",
@@ -51,7 +68,7 @@ export const projects: Project[] = [
     status: ["Personal Project"],
   },
   {
-    id: 3,
+    id: 4,
     title: "AstraAI",
     description:
       "Document-grounded AI system using RAG to answer questions from PDFs with a hybrid retrieval pipeline and controlled response handling.",
@@ -69,7 +86,7 @@ export const projects: Project[] = [
     status: ["Personal Project"],
   },
   {
-    id: 4,
+    id: 5,
     title: "CRAVO",
     description:
       "Personalized diet planner that generates daily meal plans using real recipe data, tailored to user goals like weight loss, gain, or maintenance.",
@@ -87,7 +104,7 @@ export const projects: Project[] = [
     status: ["Personal Project"],
   },
   {
-    id: 5,
+    id: 6,
     title: "AI Resume Screening",
     description:
       "Automated resume screening workflow that compares candidates with job descriptions using AI and sends intelligent email responses.",
@@ -102,7 +119,7 @@ export const projects: Project[] = [
     status: ["Personal Project"],
   },
   {
-    id: 6,
+    id: 7,
     title: "UniHive",
     description:
       "Student-first marketplace that lets verified students across India buy, sell, and offer services inside a trusted peer-to-peer campus ecosystem.",
@@ -117,7 +134,7 @@ export const projects: Project[] = [
     status: ["Personal Project", "Ongoing"],
   },
   {
-    id: 7,
+    id: 8,
     title: "Exam Question Difficulty Predictor",
     description:
       "Gen AI group project focused on predicting exam question difficulty using ML-driven analysis and an interactive Streamlit interface.",
@@ -134,7 +151,7 @@ export const projects: Project[] = [
     status: ["Group Project"],
   },
   {
-    id: 8,
+    id: 9,
     title: "Kerala Residential Electricity Anomaly Detection",
     description:
       "District-level DVA project for identifying high-risk residential electricity anomalies in Kerala and helping authorities prioritize inspections proactively.",
@@ -149,7 +166,7 @@ export const projects: Project[] = [
     status: ["Group Project"],
   },
   {
-    id: 9,
+    id: 10,
     title: "PayShield",
     description:
       "Ongoing group project building a digital banking system with fraud detection, secure authentication, and a full-stack TypeScript workflow.",
