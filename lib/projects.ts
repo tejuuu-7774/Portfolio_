@@ -181,4 +181,21 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/Dhanvin1520/PayShield-Digital-Banking-System.git",
     status: ["Group Project", "Ongoing"],
   },
+  {
+    id: 11,
+    title: "US Used Cars Market Analysis",
+    description:
+      "Interactive Tableau dashboard analyzing US used car listings to uncover pricing trends, vehicle behavior, and market segmentation across states, fuel types, and conditions.",
+    techStack: [
+      { label: "Tool", value: "Tableau Public" },
+      { label: "Data", value: "Craigslist Used Cars Dataset" },
+      { label: "Analysis", value: "Exploratory Data Analysis" },
+      { label: "Visualization", value: "Dashboard Design" },
+      { label: "Concepts", value: "Segmentation + Trend Analysis" },
+    ],
+    githubUrl: "https://github.com/tejuuu-7774/Section-D_Group-13_Used_Cars_Market_Analysis.git",
+    liveUrl: "https://public.tableau.com/app/profile/tejaswini.palwai/viz/Craigslist_Used_Cars_Dataset_WorkBook/Dashboard1-MARKETOVERVIEW",
+    imageUrl: "/projects/usedcars-dashboard.png",
+    status: ["Personal Project"],
+  }
 ];
